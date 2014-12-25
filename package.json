@@ -1,0 +1,22 @@
+{
+  "name": "WeberLogicJS",
+  "version": "0.0.0",
+  "description": "Formal Logic Interpreter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cameronbwhite/WeberLogicJS.git"
+  },
+  "author": "Cameron Brandon White",
+  "license": "BSDv3",
+  "bugs": {
+    "url": "https://github.com/cameronbwhite/WeberLogicJS/issues"
+  },
+  "homepage": "https://github.com/cameronbwhite/WeberLogicJS",
+  "dependencies": {
+    "pegjs": "^0.8.0"
+  }
+}
