@@ -164,7 +164,7 @@ _level_3_
   
 level_4 
     = _ "~" _ right:level_4 _ { return new Not(right); }
-    / _ "(" _ x:expression _ ")" _ { return x; }
+    / _ "(" _ x:level_1 _ ")" _ { return x; }
     / _ x:predicate _ { return x; }
  
 predicate = letters:[A-Z]+ { 
