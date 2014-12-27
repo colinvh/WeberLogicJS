@@ -1,0 +1,21 @@
+{
+  "name": "WeberLogicJS",
+  "version": "0.0.0",
+  "homepage": "https://github.com/cameronbwhite/WeberLogicJS",
+  "authors": [
+    "Cameron Brandon White <cameron.white@janrain.com>"
+  ],
+  "description": "Javascript Formal Logic Parser",
+  "main": "lib/WeberLogicJS.js",
+  "moduleType": [
+    "node"
+  ],
+  "license": "BSDv3",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
