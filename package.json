@@ -2,7 +2,7 @@
   "name": "WeberLogicJS",
   "version": "0.0.0",
   "description": "Formal Logic Interpreter",
-  "main": "lib/WeberLogicJS.js",
+  "main": "dist/WeberLogic.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "generate-parser": "gulp generate-parser"
@@ -21,7 +21,9 @@
     "pegjs": "^0.8.0"
   },
   "devDependencies": {
+    "browserify": "^8.0.2",
     "gulp": "^3.8.10",
+    "gulp-browserify": "^0.5.0",
     "gulp-run": "^1.6.5"
   }
 }
