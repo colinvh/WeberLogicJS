@@ -147,12 +147,12 @@
     truthTable = {
         not: function(value) { return !value; },
         and: function(lhs, rhs) { return lhs && rhs; },
-        or: function(lhs, rhs) { return lhs || rhs;  },
-        xor: function(lhs, rhs) { return lhs ? !rhs : rhs; },
+        or: function(lhs, rhs) { return lhs || rhs; },
+        xor: function(lhs, rhs) { return !lhs != !rhs; },
         nand: function(lhs, rhs) { return !(lhs && rhs); },
-        nor: function(lhs, rhs) { return !(lhs || rhs);  },
-        implies: function(lhs, rhs) { return this.or(this.not(lhs), rhs); },
-        iff: function(lhs, rhs) { return this.and(this.implies(lhs,rhs), this.implies(rhs,lhs)); } 
+        nor: function(lhs, rhs) { return !(lhs || rhs); },
+        implies: function(lhs, rhs) { return !lhs || rhs; },
+        iff: function(lhs, rhs) { return !lhs == !rhs; } 
     };
     
     function getPermutations(items, length) {
