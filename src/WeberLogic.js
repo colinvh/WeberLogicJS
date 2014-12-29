@@ -98,6 +98,33 @@
             return truthTable.or(this.left_expression.evaluate(), this.right_expression.evaluate());
         };
     }
+    function Xor(left_expression, right_expression) {
+        BinaryOperator.apply(this, arguments);
+        this.toString = function () {
+            return "(" + left_expression + "^" + right_expression + ")";
+        };
+        this.evaluate = function () {
+            return truthTable.xor(this.left_expression.evaluate(), this.right_expression.evaluate());
+        };
+    }
+    function Nor(left_expression, right_expression) {
+        BinaryOperator.apply(this, arguments);
+        this.toString = function () {
+            return "(" + left_expression + "~|" + right_expression + ")";
+        };
+        this.evaluate = function () {
+            return truthTable.nor(this.left_expression.evaluate(), this.right_expression.evaluate());
+        };
+    }
+    function Nand(left_expression, right_expression) {
+        BinaryOperator.apply(this, arguments);
+        this.toString = function () {
+            return "(" + left_expression + "~&" + right_expression + ")";
+        };
+        this.evaluate = function () {
+            return truthTable.nand(this.left_expression.evaluate(), this.right_expression.evaluate());
+        };
+    }
     function Implies(left_expression, right_expression) {
         BinaryOperator.apply(this, arguments);
         this.toString = function () {
