@@ -192,11 +192,16 @@ _level_3_
     = _ "|" _ right:level_3 _ { return function(left) { return new Or(left, right); } }
     / _ "^" _ right:level_3 _ { return function(left) { return new Xor(left, right); } }
     / _ "~|" _ right:level_3 _ { return function(left) { return new Nor(left, right); } }
-    / _ "&" _ right:level_3 _ { return function(left) { return new And(left, right); } }
-    / _ "~&" _ right:level_3 _ { return function(left) { return new Nand(left, right); } }
-  
+    
 level_4 
-    = _ "~" _ right:level_4 _ { return new Not(right); }
+    = _ left:level_5 _ right:_level_4_ _ { return right(left); }
+    / _ x:level_5 _ { return x; } 
+_level_4_ 
+    = _ "&" _ right:level_4 _ { return function(left) { return new And(left, right); } }
+    / _ "~&" _ right:level_4 _ { return function(left) { return new Nand(left, right); } }
+  
+level_5 
+    = _ "~" _ right:level_5 _ { return new Not(right); }
     / _ "(" _ x:level_1 _ ")" _ { return x; }
     / _ x:predicate _ { return x; }
  
