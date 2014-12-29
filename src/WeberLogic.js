@@ -52,7 +52,7 @@
     function Not(expression) { 
         UnaryOperator.apply(this, arguments);
         this.toString = function () {
-            return "~" + expression;
+            return "¬" + expression;
         };
         this.evaluate = function () {
             return truthTable.not(expression.evaluate());
@@ -83,7 +83,7 @@
     function And(left_expression, right_expression) {
         BinaryOperator.apply(this, arguments);
         this.toString = function () {
-            return "(" + this.left_expression + "&" + this.right_expression + ")";
+            return "(" + this.left_expression + "∧" + this.right_expression + ")";
         };
         this.evaluate = function () {
             return truthTable.and(this.left_expression.evaluate(), this.right_expression.evaluate());
@@ -92,7 +92,7 @@
     function Or(left_expression, right_expression) {
         BinaryOperator.apply(this, arguments);
         this.toString = function () {
-            return "(" + left_expression + "|" + right_expression + ")";
+            return "(" + left_expression + "∨" + right_expression + ")";
         };
         this.evaluate = function () {
             return truthTable.or(this.left_expression.evaluate(), this.right_expression.evaluate());
@@ -101,7 +101,7 @@
     function Xor(left_expression, right_expression) {
         BinaryOperator.apply(this, arguments);
         this.toString = function () {
-            return "(" + left_expression + "^" + right_expression + ")";
+            return "(" + left_expression + "⊻" + right_expression + ")";
         };
         this.evaluate = function () {
             return truthTable.xor(this.left_expression.evaluate(), this.right_expression.evaluate());
@@ -110,7 +110,7 @@
     function Nor(left_expression, right_expression) {
         BinaryOperator.apply(this, arguments);
         this.toString = function () {
-            return "(" + left_expression + "~|" + right_expression + ")";
+            return "(" + left_expression + "⊽" + right_expression + ")";
         };
         this.evaluate = function () {
             return truthTable.nor(this.left_expression.evaluate(), this.right_expression.evaluate());
@@ -119,7 +119,7 @@
     function Nand(left_expression, right_expression) {
         BinaryOperator.apply(this, arguments);
         this.toString = function () {
-            return "(" + left_expression + "~&" + right_expression + ")";
+            return "(" + left_expression + "⊼" + right_expression + ")";
         };
         this.evaluate = function () {
             return truthTable.nand(this.left_expression.evaluate(), this.right_expression.evaluate());
@@ -128,7 +128,7 @@
     function Implies(left_expression, right_expression) {
         BinaryOperator.apply(this, arguments);
         this.toString = function () {
-            return "(" + left_expression + "->" + right_expression + ")";
+            return "(" + left_expression + "⇒" + right_expression + ")";
         };
         this.evaluate = function () {
             return truthTable.implies(this.left_expression.evaluate(), this.right_expression.evaluate());
@@ -137,7 +137,7 @@
     function Iff(left_expression, right_expression) {
         BinaryOperator.apply(this, arguments);
         this.toString = function () {
-            return "(" + left_expression + "<->" + right_expression + ")";
+            return "(" + left_expression + "⇔" + right_expression + ")";
         };
         this.evaluate = function () {
             return truthTable.iff(this.left_expression.evaluate(), this.right_expression.evaluate());
