@@ -189,8 +189,11 @@ level_3
     = _ left:level_4 _ right:_level_3_ _ { return right(left); }
     / _ x:level_4 _ { return x; } 
 _level_3_ 
-    = _ "&" _ right:level_3 _ { return function(left) { return new And(left, right); } }
-    / _ "|" _ right:level_3 _ { return function(left) { return new Or(left, right); } }
+    = _ "|" _ right:level_3 _ { return function(left) { return new Or(left, right); } }
+    / _ "^" _ right:level_3 _ { return function(left) { return new Xor(left, right); } }
+    / _ "~|" _ right:level_3 _ { return function(left) { return new Nor(left, right); } }
+    / _ "&" _ right:level_3 _ { return function(left) { return new And(left, right); } }
+    / _ "~&" _ right:level_3 _ { return function(left) { return new Nand(left, right); } }
   
 level_4 
     = _ "~" _ right:level_4 _ { return new Not(right); }
